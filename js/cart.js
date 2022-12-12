@@ -13,8 +13,14 @@ window.addEventListener('click', (e) => {
             price: card.querySelector('.price__currency').innerText,
             counter: card.querySelector('[data-counter]').innerText,
         }
-    
-        const cartItemHTML = `
+
+        const itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`);
+
+        if (itemInCart) {
+            const counterEl = itemInCart.querySelector('[data-counter]');
+            counterEl.innerText = +counterEl.innerText + +productInfo.counter;
+        } else {
+            const cartItemHTML = `
             <div class="cart-item" data-id="${productInfo.id}">
                 <div class="cart-item__top">
                     <div class="cart-item__img">
@@ -45,6 +51,16 @@ window.addEventListener('click', (e) => {
             </div>
         `;
 
-        cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
+            cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
+        }
+
+        // Сброс счётчика 
+        card.querySelector('[data-counter]').innerText = '1';
+
+        // Функция по отображению статуса корзины
+        toggleCardStatus();
+
+        // Пересчет общей суммы
+        calcCartPriceAndDelivery();
     }
 })
