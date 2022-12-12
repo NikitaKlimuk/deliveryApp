@@ -19,7 +19,7 @@ function renderProducts(arr) {
                     <img class="product-img" src="img/roll/${item.imgSrc}" alt="">
                     <div class="card-body text-center">
                         <h4 class="item-title">${item.title}</h4>
-                        <p><small data-items-in-box class="text-muted">${item.itemsInBox} шт.</small></p>
+                        <p><small data-items-in-box class="text-muted">${item.itemsInBox} szt.</small></p>
 
                         <div class="details-wrapper">
 
@@ -36,7 +36,7 @@ function renderProducts(arr) {
                             </div>
                         </div>
 
-                        <button data-cart type="button" class="btn btn-block btn-outline-warning">+ в корзину</button>
+                        <button data-cart type="button" class="btn btn-block btn-outline-warning">+ dodać do koszyka</button>
 
                     </div>
                 </div>

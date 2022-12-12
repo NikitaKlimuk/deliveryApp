@@ -25,7 +25,7 @@ function calcCartPriceAndDelivery() {
 
     if (totalPrice >= 60) {
         deliveryCost.classList.add('free');
-        deliveryCost.innerText = 'Бесплатно';
+        deliveryCost.innerText = 'bezpłatnie';
     } else {
         deliveryCost.classList.remove('free');
         deliveryCost.innerText = '15 PLN';
